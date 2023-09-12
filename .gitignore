@@ -1,2 +1,3 @@
 data/*
+!data
 code/evaluate_baichuan_chatfunc.py

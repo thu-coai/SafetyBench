@@ -84,6 +84,9 @@ def gen(path, outpath):
 
         data = new_data
     
+    if not data:
+        return
+    
     path = '/data/zhangzhexin/huggingface_pretrained_models/Baichuan-13B-Chat'
     # path = 'baichuan-inc/Baichuan-13B-Chat'
     tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
@@ -188,10 +191,10 @@ if __name__ == '__main__':
     
     model_name = 'baichuan-chat-13b'
     
-    eva_English = True # True for English evaluation and False for Chinese evaluation
-    zero_shot = False # True for zero-shot evaluation and False for five-shot evaluation
+    eva_set = 'en' # 'zh' or 'en' or 'zh_subset'
+    zero_shot = True # True for zero-shot evaluation and False for five-shot evaluation
     
-    if eva_English:
+    if eva_set == 'en':
         # for English
         # construct evaluation prompts
         path = '../data/test_en.json'
@@ -210,7 +213,7 @@ if __name__ == '__main__':
         outpath = f'../data/test_en_eva_{model_name}_zeroshot{zero_shot}_res_processed.json'
         process_medium_results(path, outpath)
     
-    else:
+    elif eva_set == 'zh':
         # for Chinese
         # construct evaluation prompts
         path = '../data/test_zh.json'
@@ -228,4 +231,22 @@ if __name__ == '__main__':
         path = f'../data/test_zh_eva_{model_name}_zeroshot{zero_shot}_res.jsonl'
         outpath = f'../data/test_zh_eva_{model_name}_zeroshot{zero_shot}_res_processed.json'
         process_medium_results(path, outpath)
+    
+    elif eva_set == 'zh_subset':
+        # for Chinese subset
+        # construct evaluation prompts
+        path = '../data/test_zh_subset.json'
+        outpath = f'../data/test_zh_subset_eva_{model_name}_zeroshot{zero_shot}_prompts.json'
+        shotpath = '../data/dev_zh.json'
+        en = False
+        construct_evaluate_prompts(path, outpath, en=en, zero_shot=zero_shot, shot_path=shotpath)
         
+        # generate the responses
+        path = f'../data/test_zh_subset_eva_{model_name}_zeroshot{zero_shot}_prompts.json'
+        outpath = f'../data/test_zh_subset_eva_{model_name}_zeroshot{zero_shot}_res.jsonl'
+        gen(path, outpath)
+        
+        # extract answers from the responses
+        path = f'../data/test_zh_subset_eva_{model_name}_zeroshot{zero_shot}_res.jsonl'
+        outpath = f'../data/test_zh_subset_eva_{model_name}_zeroshot{zero_shot}_res_processed.json'
+        process_medium_results(path, outpath)

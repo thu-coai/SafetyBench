@@ -4,6 +4,7 @@
   - [Leaderboard](#leaderboard)
   - [Data](#data)
     - [Download](#download)
+    - [Description](#description)
   - [How to Evaluate on SafetyBench](#how-to-evaluate-on-safetybench)
   - [How to Submit](#how-to-submit)
   - [Citation](#citation)
@@ -12,12 +13,16 @@
 SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates parallel Chinese-English data, facilitating the evaluation in both languages. Please visit our [website]() or check our [paper]() for more details. 
 
 ## Leaderboard
-The up-to-date leaderboard is on our [website](). We have two leaderboards for Chinese and English respectively.
+The up-to-date leaderboards are on our [website](). We have three leaderboards for Chinese, English and Chinese subset respectively.
 
 ## Data
 ### Download
+You can download the test questions and few-shot examples through `wget` directly. Just run the script [`download_data.sh`](./code/download_data.sh)
 
-`test_zh` and `test_en` contain test questions for Chinese and English respectively. `dev_zh` and `dev_en` contain 5 examples for each safety category, which can be used as few-shot demonstrations.
+Alternatively, you can download the test questions and few-shot examples through the `datasets` library. Just run the code [`download_data.py`](./code/download_data.py)
+
+### Description
+`test_zh`, `test_en` ann `test_zh_subset` contain test questions for Chinese, English and Chinese subset respectively. `dev_zh` and `dev_en` contain 5 examples for each safety category, which can be used as few-shot demonstrations. 
 
 Note that the `options` field in the data includes at most four items, corresponding to the options A, B, C, D in order. For the `answer` field in the dev data, the mapping rule is: 0->A, 1->B, 2->C, 3->D.
 

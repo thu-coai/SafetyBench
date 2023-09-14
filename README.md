@@ -1,13 +1,12 @@
-# SafetyBench
+![SafetyBench](figs/cover.png)
 
-- [SafetyBench](#safetybench)
-  - [Leaderboard](#leaderboard)
-  - [Data](#data)
-    - [Download](#download)
-    - [Description](#description)
-  - [How to Evaluate on SafetyBench](#how-to-evaluate-on-safetybench)
-  - [How to Submit](#how-to-submit)
-  - [Citation](#citation)
+- [Leaderboard](#leaderboard)
+- [Data](#data)
+  - [Download](#download)
+  - [Description](#description)
+- [How to Evaluate on SafetyBench](#how-to-evaluate-on-safetybench)
+- [How to Submit](#how-to-submit)
+- [Citation](#citation)
 
 
 SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Please visit our [website](https://llmbench.ai/safety) or check our [paper](https://arxiv.org/abs/2309.07045) for more details. 

@@ -87,8 +87,7 @@ def gen(path, outpath):
     if not data:
         return
     
-    path = '/data/zhangzhexin/huggingface_pretrained_models/Baichuan-13B-Chat'
-    # path = 'baichuan-inc/Baichuan-13B-Chat'
+    path = 'baichuan-inc/Baichuan-13B-Chat'
     tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained(path, trust_remote_code=True, torch_dtype=torch.float16, device_map='auto')
     model = model.eval()
@@ -100,7 +99,7 @@ def gen(path, outpath):
             batch_data = data[start: start + batch_size]
             queries = [d['prompt'] for d in batch_data]
             inputs = tokenizer(queries, padding=True, return_tensors="pt", truncation=True, max_length=2048).to('cuda')
-            outputs = model.generate(**inputs, do_sample=False, max_new_tokens=32, min_new_tokens=2)
+            outputs = model.generate(**inputs, do_sample=False, max_new_tokens=64, min_new_tokens=2)
             responses = []
             for idx in range(len(outputs)):
                 output = outputs.tolist()[idx][len(inputs["input_ids"][idx]):]

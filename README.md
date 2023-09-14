@@ -1,5 +1,14 @@
 ![SafetyBench](figs/cover.png)
 
+<p align="center">
+   🌐 <a href="https://llmbench.ai/safety" target="_blank">Website</a> • 🤗 <a href="https://huggingface.co/datasets/thu-coai/SafetyBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="https://arxiv.org/abs/2309.07045" target="_blank">Paper</a>
+</p>
+
+SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Please visit our [website](https://llmbench.ai/safety) or check our [paper](https://arxiv.org/abs/2309.07045) for more details. 
+
+![SafetyBench](./figs/overview.png)
+
+## Table of Contents <!-- omit from toc -->
 - [Leaderboard](#leaderboard)
 - [Data](#data)
   - [Download](#download)
@@ -9,10 +18,10 @@
 - [Citation](#citation)
 
 
-SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Please visit our [website](https://llmbench.ai/safety) or check our [paper](https://arxiv.org/abs/2309.07045) for more details. 
-
 ## Leaderboard
-The up-to-date leaderboards are on our [website](https://llmbench.ai/safety). We have three leaderboards for Chinese, English and Chinese subset respectively.
+The up-to-date leaderboards are on our [website](https://llmbench.ai/safety). We have three leaderboards for Chinese, English and Chinese subset respectively. We remove questions with highly sensitive keywords and downsample 300 questions for each category to construct the Chinese subset. Summarized evaluation results of some representative LLMs are shown below:
+
+![Result](./figs/res.png)
 
 ## Data
 ### Download

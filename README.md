@@ -1,4 +1,4 @@
-![SafetyBench](figs/cover.png)
+<img src="figs/cover.png" alt="SafetyBench" style="zoom:85%;" />
 
 <p align="center">
    🌐 <a href="https://llmbench.ai/safety" target="_blank">Website</a> • 🤗 <a href="https://huggingface.co/datasets/thu-coai/SafetyBench" target="_blank">Hugging Face</a> • ⏬ <a href="#data" target="_blank">Data</a> •   📃 <a href="https://arxiv.org/abs/2309.07045" target="_blank">Paper</a>

@@ -25,6 +25,8 @@ The up-to-date leaderboards are on our [website](https://llmbench.ai/safety). We
 
 ## Data
 ### Download
+We put our data on the [Hugging Face website](https://huggingface.co/datasets/thu-coai/SafetyBench).
+
 You can download the test questions and few-shot examples through `wget` directly. Just run the script [`download_data.sh`](./code/download_data.sh)
 
 Alternatively, you can download the test questions and few-shot examples through the `datasets` library. Just run the code [`download_data.py`](./code/download_data.py)

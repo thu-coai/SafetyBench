@@ -10,10 +10,10 @@
   - [Citation](#citation)
 
 
-SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates parallel Chinese-English data, facilitating the evaluation in both languages. Please visit our [website]() or check our [paper]() for more details. 
+SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, which comprises 11,435 diverse multiple choice questions spanning across 7 distinct categories of safety concerns. SafetyBench also incorporates both Chinese and English data, facilitating the evaluation in both languages. Please visit our [website](https://llmbench.ai/safety) or check our [paper](https://arxiv.org/abs/2309.07045) for more details. 
 
 ## Leaderboard
-The up-to-date leaderboards are on our [website](). We have three leaderboards for Chinese, English and Chinese subset respectively.
+The up-to-date leaderboards are on our [website](https://llmbench.ai/safety). We have three leaderboards for Chinese, English and Chinese subset respectively.
 
 ## Data
 ### Download
@@ -27,7 +27,7 @@ Alternatively, you can download the test questions and few-shot examples through
 Note that the `options` field in the data includes at most four items, corresponding to the options A, B, C, D in order. For the `answer` field in the dev data, the mapping rule is: 0->A, 1->B, 2->C, 3->D.
 
 ## How to Evaluate on SafetyBench
-In our paper, we conduct experiments in both zero-shot and five-shot settings. And we extract the predicted answers from models' responses. Examples of evaluation code could be found at [code](./code/evaluate_baichuan.py). We don’t include CoT-based evaluation officially currently because SafetyBench is less reasoning-intensive than benchmarks testing the model’s
+In our paper, we conduct experiments in both zero-shot and five-shot settings. And we extract the predicted answers from models' responses. An example of evaluation code could be found at [code](./code/evaluate_baichuan.py). We don’t include CoT-based evaluation because SafetyBench is less reasoning-intensive than benchmarks testing the model’s
 general capabilities such as MMLU. But feel free to submit your results based on CoT. The default prompt for zero-shot and five-shot evaluation is shown below:
 ![figure](./figs/eva_prompts.png)
 
@@ -48,6 +48,14 @@ You need to first prepare a UTF-8 encoded JSON file with the following format, p
 }
 ```
 
-Then you can submit the JSON file to our [website](). 
+Then you can submit the JSON file to our [website](https://llmbench.ai/safety). 
 
 ## Citation
+```
+@article{zhang2023safetybench,
+      title={SafetyBench: Evaluating the Safety of Large Language Models with Multiple Choice Questions}, 
+      author={Zhexin Zhang and Leqi Lei and Lindong Wu and Rui Sun and Yongkang Huang and Chong Long and Xiao Liu and Xuanyu Lei and Jie Tang and Minlie Huang},
+      journal={arXiv preprint arXiv:2309.07045},
+      year={2023}
+}
+```

@@ -10,6 +10,9 @@ SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, whic
 
 ![SafetyBench](./figs/overview.png)
 
+## News
+**🎉 `2024/06/24`:** SafetyBench has been accepted by the ACL 2024 Main Conference. See our camera-ready version of the paper at [Arxiv](https://arxiv.org/abs/2309.07045). SafetyBench is also integrated into [SuperBench](https://fm.ai.tsinghua.edu.cn/superbench/#/).
+
 ## Table of Contents <!-- omit from toc -->
 - [Leaderboard](#leaderboard)
 - [Data](#data)
@@ -34,7 +37,7 @@ You can download the test questions and few-shot examples through `wget` directl
 Alternatively, you can download the test questions and few-shot examples through the `datasets` library. Just run the code [`download_data.py`](./code/download_data.py)
 
 ### Description
-`test_zh`, `test_en` ann `test_zh_subset` contain test questions for Chinese, English and Chinese subset respectively. `dev_zh` and `dev_en` contain 5 examples for each safety category, which can be used as few-shot demonstrations. 
+`test_zh`, `test_en` and `test_zh_subset` contain test questions for Chinese, English and Chinese subset respectively. `dev_zh` and `dev_en` contain 5 examples for each safety category, which can be used as few-shot demonstrations. 
 
 Note that the `options` field in the data includes at most four items, corresponding to the options A, B, C, D in order. For the `answer` field in the dev data, the mapping rule is: 0->A, 1->B, 2->C, 3->D.
 

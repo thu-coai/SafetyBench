@@ -190,8 +190,8 @@ if __name__ == '__main__':
     
     model_name = 'baichuan-chat-13b'
     
-    eva_set = 'en' # 'zh' or 'en' or 'zh_subset'
-    zero_shot = True # True for zero-shot evaluation and False for five-shot evaluation
+    eva_set = 'zh_subset' # 'zh' or 'en' or 'zh_subset'
+    zero_shot = False # True for zero-shot evaluation and False for five-shot evaluation
     
     if eva_set == 'en':
         # for English

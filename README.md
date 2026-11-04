@@ -11,6 +11,8 @@ SafetyBench is a comprehensive benchmark for evaluating the safety of LLMs, whic
 ![SafetyBench](./figs/overview.png)
 
 ## News
+
+- [EvalScope](https://github.com/modelscope/evalscope) supports SafetyBench zero-shot evaluation for OpenAI-compatible model endpoints. See the [usage guide](https://evalscope.readthedocs.io/en/latest/benchmarks/safety_bench.html).
 **🎉 `2025/07/28`:** As LLM safety has significantly improved in recent years, we’ve decided to fully open-source our test answers under `opensource_data`! Please refer to `eva.py` for example usage.
 
 **🎉 `2024/06/24`:** SafetyBench has been accepted by the ACL 2024 Main Conference. See our camera-ready version of the paper at [Arxiv](https://arxiv.org/abs/2309.07045). SafetyBench is also integrated into [SuperBench](https://fm.ai.tsinghua.edu.cn/superbench/#/).
